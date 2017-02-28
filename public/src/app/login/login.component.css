@@ -1,0 +1,95 @@
+* {
+  font-family: 'Raleway';
+}
+
+.login-form {
+  max-width: 380px;
+  position: relative;
+  margin: 0 auto;
+  top: 50px;
+  margin-bottom: 40px;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.27);
+  border-radius: 10px;
+  background: #fafafa;
+}
+
+.header-form {
+  text-transform: uppercase;
+  letter-spacing: -4px;
+}
+
+.header-form h1 {
+  font-family: initial;
+  text-align: center;
+  padding: 30px;
+}
+
+.input-form {
+  display: flex;
+  flex-flow: column nowrap;
+  margin: 0 65px;
+}
+
+.input-form > input {
+  padding: 10px 16px;
+  text-align: center;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  background: transparent;
+  font-size: 14px;
+}
+
+.input-form > label {
+  padding-top: 10px;
+  font-weight: 900;
+}
+
+.hr-inline {
+  position: relative;
+  text-align: center;
+  margin: 0 auto;
+  max-width: 100px;
+  border-bottom: 1px solid #ccc;
+  height: 10px;
+}
+
+.hr-text {
+  background: #fafafa;
+  padding: 0 6px;
+}
+
+.button-form {
+  text-align: center;
+  margin: 0 65px;
+  padding: 29px 20px;
+}
+
+.enter-btn {
+  padding: 10px 66px;
+}
+
+.register-wrapper {
+  padding-bottom: 62px;
+  position: relative;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.register-wrapper a {
+    color: #ff7878;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+}
+
+.register-btn {
+  border: 1px solid #ff7878;
+  background: transparent;
+  padding: 10px 45px;
+}
+
+.register-wrapper a:hover {
+  transition: all 0.3s ease-out;
+  background: #ff7878;
+  color: white;
+  box-shadow: none;
+}

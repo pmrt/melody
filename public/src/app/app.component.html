@@ -1,0 +1,40 @@
+<div id="wrapper">
+  <div class="title">
+    <h1>Tu cesta</h1>
+    <p class="close" (click)="hide()">X</p>
+  </div>
+  <div class="content">
+    <p *ngIf="isArrayEmpty(cart)" class="empty-cart"> Tu cesta está vacía.</p>
+    <div class="cart-item" *ngFor="let item of cart">
+      <img [src]='item.img_url' height="100" width="100">
+      <div class="flex-wrapper">
+        <div class="item-text">
+          <p>{{item.name}}</p>
+          <p>{{item.desc}}</p>
+        </div>
+        <div class="cart-price">
+          <p>{{item.price + "€"}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="total-wrapper">
+    <a class="button pay-btn">Pagar</a>
+
+    <div class="empty">
+      <a (click)="empty()" class="empty">Vaciar</a>
+    </div>
+
+    <div class="total">
+      <p>Total | <span>{{ getTotal()+"€" }}</span></p>
+    </div>
+
+  </div>
+
+</div>
+
+<div class="container">
+  <app-header (showCart)="show($event)"></app-header>
+  <router-outlet></router-outlet>
+</div>

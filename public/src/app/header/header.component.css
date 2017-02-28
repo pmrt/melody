@@ -1,0 +1,45 @@
+.header-wrapper {
+  height: 100px;
+  padding: 20px 0px;
+}
+
+.logo-header {
+  text-transform: uppercase;
+  letter-spacing: -4px;
+}
+
+.nav {
+  font-family: 'Raleway';
+  text-transform: uppercase;
+  display: flex;
+}
+
+.nav .menu-wrapper {
+  flex: 2;
+  padding-top: 4px;
+}
+
+.nav .menu-wrapper > a {
+  padding-right: 20px;
+}
+
+.nav .login-wrapper > img {
+  padding-right: 10px;
+  cursor: pointer;
+  vertical-align:middle;
+}
+
+.nav .login-wrapper > a:before {
+  content: attr(data-count);
+  position: absolute;
+  background: #ff7878;
+  border-radius: 100px;
+  margin-left: -30px;
+  font-size: 10px;
+  width: 11px;
+  height: 11px;
+  text-align: center;
+  margin-top: 3px;
+  color: #fff;
+}
+
