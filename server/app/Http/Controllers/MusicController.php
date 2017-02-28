@@ -53,7 +53,7 @@ class MusicController extends Controller
 
         return response()->json([
                 "response" => "success",
-                "id" => "0"
+                "id" => $product->id
             ], 200
         );
 

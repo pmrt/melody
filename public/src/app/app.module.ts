@@ -15,6 +15,9 @@ import { RouterModule, Routes } from '@angular/router';
 /* SERVICES */
 import { ProductService } from './shared/product.service';
 import { CartService } from './shared/cart.service';
+import { UsersService } from './shared/users.service';
+import { AdminComponent } from './admin/admin.component';
+import { ProfileComponent } from './profile/profile.component';
 
 const routes = [
     { path: 'login', component: LoginComponent },
@@ -23,7 +26,9 @@ const routes = [
       path: '',
       redirectTo: '/products',
       pathMatch: 'full'
-    }
+    },
+    { path: 'admin', component: AdminComponent },
+    { path: 'profile', component: ProfileComponent }
 ];
 
 @NgModule({
@@ -31,7 +36,9 @@ const routes = [
     AppComponent,
     HeaderComponent,
     ProductsComponent,
-    LoginComponent
+    LoginComponent,
+    AdminComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +46,7 @@ const routes = [
     HttpModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [ ProductService, CartService ],
+  providers: [ ProductService, CartService, UsersService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

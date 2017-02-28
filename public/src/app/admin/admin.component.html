@@ -1,0 +1,91 @@
+<!-- Don't do this in a real case, here we get the response from
+the list of users and the products but we hide it if the user is not
+and admin. It could be bypassed easily, that's why whe need to send
+and auth request on every get method so server authenticates the user
+before sending any sensible data -->
+
+<div *ngIf="session.user.admin" class="admin-wrapper">
+
+  <table class="users">
+    <h1>Users</h1>
+    <tr>
+      <th>ID</th>
+      <th>Nombre</th>
+      <th>Dirección</th>
+      <th>Fecha</th>
+    </tr>
+    <tr *ngFor="let item of userList">
+        <td>{{item.id}}</td>
+        <td>{{item.name}}</td>
+        <td>{{item.address}}</td>
+        <td>{{item.created_at}}</td>
+        <td (click)='removeUser(item.id)' class="remove">X</td>
+    </tr>
+  </table>
+  <p *ngIf="userRemovingMsg" class="removing-msg">Removing item...</p>
+
+
+  <table class="products">
+    <h1>Products</h1>
+    <tr>
+      <th>Nombre</th>
+      <th>Stock</th>
+      <th>Precio</th>
+    </tr>
+    <tr *ngFor="let item of products">
+        <td>{{item.name}}</td>
+        <td>{{item.stock + " en stock"}}</td>
+        <td>{{item.price}}</td>
+        <td (click)="removeProduct(item.id)" class="remove">X</td>
+    </tr>
+  </table>
+  <p *ngIf="removingMsg" class="removing-msg">Removing item...</p>
+
+
+  <div class="new-product">
+    <h1>Añadir producto</h1>
+
+    <div class="new-product-wrapper">
+      <div class="field">
+      <label for="">Nombre</label>
+      <input type="text" [(ngModel)]='name'>
+      </div>
+
+      <div class="field">
+      <label for="">Imagen (URL)</label>
+      <input type="text" [(ngModel)]='image'>
+      </div>
+
+      <div class="field">
+      <label for="">Descripción</label>
+      <input type="text" [(ngModel)]='desc'>
+      </div>
+
+      <div class="field">
+      <label for="">Precio (€)</label>
+      <input type="text" [(ngModel)]='price'>
+      </div>
+
+      <div class="field">
+      <label for="">Descuento (€)</label>
+      <input type="text" [(ngModel)]='sale'>
+      </div>
+
+      <div class="field">
+      <label for="">Stock</label>
+      <input type="text" [(ngModel)]='stock'>
+      </div>
+    </div>
+
+    <div class="button-wrapper">
+      <a class="button btn-create" (click)='addProduct()'>Crear producto</a>
+    </div>
+
+  </div>
+
+</div>
+
+
+<div *ngIf="!session.user.admin" class="error">
+  <p>No tienes permiso para acceder a esta página.</p>
+</div>

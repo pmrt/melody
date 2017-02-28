@@ -42,3 +42,13 @@ body {
   text-transform: uppercase;
   white-space: normal;
 }
+
+.error {
+  font-size: 24px;
+  font-family: Raleway;
+  text-align: center;
+  top: 45vh;
+  position: absolute;
+  left: 30vh;
+  right: 30vh;
+}

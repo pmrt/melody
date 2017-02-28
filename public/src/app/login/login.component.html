@@ -4,25 +4,42 @@
     <div class="header-form">
       <h1>Iniciar sesión</h1>
     </div>
-    <div class="input-form">
-      <label for="user">Nombre de usuario</label>
-      <input name="user" type="text">
-      <label for="password">Contraseña</label>
-      <input name="password" type="password">
-    </div>
 
-    <div class="button-form">
-      <a class="button enter-btn">Entrar</a>
-    </div>
+      <div class="input-form">
+        <label for="user">Nombre de usuario</label>
+        <input name="user" type="text" [(ngModel)]='email'>
+        <label for="password">Contraseña</label>
+        <input name="password" type="password" [(ngModel)]='password' (keyup.enter)='login()'>
+      </div>
 
-    <div class="hr-inline">
-      <span class="hr-text">ó</span>
-    </div>
+      <div class="button-form">
+        <a (click)='login()'
+        class="button enter-btn">Entrar</a>
+      </div>
 
-    <div class="register-wrapper">
-      <a class="button register-btn">Registrarse</a>
-    </div>
+      <div class="hr-inline">
+        <span class="hr-text">ó</span>
+      </div>
+
+      <div class="register-wrapper">
+        <a (click)='register()' class="button register-btn">Registrarse</a>
+      </div>
 
   </div>
 
+  <div id="register" class="overlay">
+  <div class="popup">
+    <h2 *ngIf='!session.registerFailed'>Registro completado</h2>
+    <h2 *ngIf='session.registerFailed'>Registro fallido</h2>
+    <a class="close" href="/">&times;</a>
+    <div *ngIf='!session.registerFailed' class="content">
+      El registro se ha realizado correctamente, ¡ya puedes inicia sesión!.
+    </div>
+    <div *ngIf='session.registerFailed' class="content">
+      Lo sentimos, se encontró un error al intentar realizar el registro.
+    </div>
+  </div>
 </div>
+
+</div>
+

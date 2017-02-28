@@ -1,0 +1,64 @@
+.user,
+.product {
+  display: flex;
+}
+
+.admin-wrapper {
+  font-family: Raleway;
+  margin-bottom: 100px;
+}
+
+td, tr {
+  text-align: left;
+}
+
+table {
+  width: 100%;
+}
+
+h1 {
+  margin: 25px 0px;
+}
+
+.products {
+  margin-top: 20px;
+}
+
+.new-product-wrapper {
+  position: relative;
+  margin: 0 auto;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+.field {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.field input {
+  width: 70%;
+  text-align: center;
+  border: none;
+  background: transparent;
+  border-bottom: 1px solid #ccc;
+}
+
+.button-wrapper {
+  text-align: center;
+  margin: 15px;
+}
+
+.remove {
+  cursor: pointer;
+  color: #ff7878;
+}
+
+.removing-msg {
+  color: #ff7878;
+  font-size: 18px;
+  text-align: right;
+  margin: 20px 0px;
+}
