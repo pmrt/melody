@@ -21,7 +21,7 @@ export class UsersService {
     data.append( 'password', password );
 
     this.http
-        .post('http://localhost/melody/server/public/api/v1/user/create?key=UH6v4wp33xeeh1XWiRNo', data)
+        .post('http://mrtz.es/api/public/v1/user/create?key=hidden', data)
         .subscribe( data => {
           console.log(data.json());
           this.session.registerFailed = false;
@@ -32,8 +32,21 @@ export class UsersService {
         });
   }
 
+  updateUser( email, password, address ) {
+    let data = new URLSearchParams();
+    data.append( 'email', email);
+    data.append( 'password', password);
+    data.append( 'address', address);
+
+    this.http
+        .post('http://mrtz.es/api/public/v1/user/update?key=hidden', data)
+        .subscribe( data => {
+          console.log(data.json());
+        });
+  }
+
   getUsers() {
-    return this.http.get('http://localhost/melody/server/public/api/v1/users?key=UH6v4wp33xeeh1XWiRNo');
+    return this.http.get('http://mrtz.es/api/public/v1/users?key=hidden');
   }
 
   getSession() {
@@ -50,7 +63,7 @@ export class UsersService {
     data.append('password', password );
 
     this.http
-      .post('http://localhost/melody/server/public/api/v1/user/auth?key=UH6v4wp33xeeh1XWiRNo', data)
+      .post('http://mrtz.es/api/public/v1/user/auth?key=hidden', data)
       .subscribe(
             ( response ) => {
               let results = response.json();
@@ -70,7 +83,7 @@ export class UsersService {
   }
 
   remove( id ) {
-    return this.http.get('http://localhost/melody/server/public/api/v1/user/delete/'+id+'?key=UH6v4wp33xeeh1XWiRNo');
+    return this.http.get('http://mrtz.es/api/public/v1/user/delete/'+id+'?key=hidden');
   }
 
 }

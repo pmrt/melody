@@ -9,7 +9,7 @@ export class ProductService {
   }
 
   getProducts() {
-    return this.http.get('http://localhost/melody/server/public/api/v1/products?key=UH6v4wp33xeeh1XWiRNo');
+    return this.http.get('http://mrtz.es/api/public/v1/products?key=hidden');
   }
 
   newProduct( name, image, desc, price, sale, stock ) {
@@ -22,14 +22,14 @@ export class ProductService {
     data.append( 'stock', stock);
 
     this.http
-        .post('http://localhost/melody/server/public/api/v1/products?key=UH6v4wp33xeeh1XWiRNo', data)
+        .post('http://mrtz.es/api/public/v1/products?key=hidden', data)
         .subscribe( data => {
           console.log(data.json());
         });
   }
 
   remove( id ) {
-    return this.http.get('http://localhost/melody/server/public/api/v1/delete/'+id+'?key=UH6v4wp33xeeh1XWiRNo');
+    return this.http.get('http://mrtz.es/api/public/v1/delete/'+id+'?key=hidden');
   }
 
 }

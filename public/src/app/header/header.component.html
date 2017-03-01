@@ -12,9 +12,9 @@
 
       </div>
       <div class="login-wrapper">
-        <img (click)="show()" src="/img/cart.png" width="40" height="32" alt="">
+        <img (click)="show()" src="./img/cart.png" width="40" height="32" alt="">
         <a routerLink="/login" [attr.data-count]="cartCount" *ngIf='!session.logged'>Login</a>
-        <a routerLink="/login" [attr.data-count]="cartCount" *ngIf='session.logged'>{{session.user.name}}</a>
+        <a [attr.data-count]="cartCount" *ngIf='session.logged'>{{session.user.name}}</a>
         <p (click)='logout()' *ngIf='session.logged'>Cerrar sesión</p>
       </div>
     </div>

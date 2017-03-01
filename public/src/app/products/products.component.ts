@@ -14,6 +14,8 @@ export class ProductsComponent implements OnInit {
   private cart = [];
   constructor(private ps: ProductService, private cs: CartService ) {
     let body = document.body;
+    let footer = document.getElementsByTagName('footer')[0];
+    footer.style.display = "block";
     body.style.backgroundImage = "";
 
     this.ps.getProducts().subscribe( ( result )=> {

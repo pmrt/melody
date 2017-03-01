@@ -1,0 +1,29 @@
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  position: relative;
+  font-family: Raleway;
+}
+
+.button-wrapper {
+  margin: 15px;
+  padding: 20px;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  max-width: 300px;
+  padding: 20px;
+}
+
+.user-info input {
+  border: none;
+  background: transparent;
+  border-bottom: 1px solid #ccc;
+  font-size: 12px;
+}
+
+.user-info input + label {
+  margin-top: 15px;
+}

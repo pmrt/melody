@@ -117,9 +117,37 @@ class UsernameController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update( Request $request)
     {
-        //
+        try
+        {
+            $user = \App\Username::where('email', $request->email)->get();
+
+            if ( !isset($user[0]) ) {
+                throw new ModelNotFoundException("Wrong user"); 
+            }
+
+            $currentUser = $user[0];
+
+            $currentUser->name = $request->email;
+            $currentUser->email = $request->email;
+            $currentUser->password = $request->password;
+            $currentUser->address = $request->address;
+
+            $currentUser->save();
+            return response()->json([
+                    "response" => "success",
+                    "user" => $currentUser->toArray()
+                ], 200
+            );
+        } catch (ModelNotFoundException $e)
+        {
+            return response()->json([
+                    "response" => "error",
+                    "description" => "Wrong user"
+                ], 200
+            );
+        }
     }
 
     /**

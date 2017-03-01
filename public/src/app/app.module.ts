@@ -18,6 +18,7 @@ import { CartService } from './shared/cart.service';
 import { UsersService } from './shared/users.service';
 import { AdminComponent } from './admin/admin.component';
 import { ProfileComponent } from './profile/profile.component';
+import { FooterComponent } from './footer/footer.component';
 
 const routes = [
     { path: 'login', component: LoginComponent },
@@ -38,7 +39,8 @@ const routes = [
     ProductsComponent,
     LoginComponent,
     AdminComponent,
-    ProfileComponent
+    ProfileComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

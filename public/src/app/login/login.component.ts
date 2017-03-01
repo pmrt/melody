@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { UsersService } from '../shared/users.service';
 
+import {Router} from '@angular/router';
+
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -11,11 +14,13 @@ export class LoginComponent implements OnInit {
   private email = '';
   private password = '';
   private session = { logged: false, user: { admin: false}, registerFailed: true  };
-  constructor( private users: UsersService ) {
+  constructor( private users: UsersService, private router: Router ) {
     let body = document.body;
+    let footer = document.getElementsByTagName('footer')[0];
     body.style.backgroundSize = "cover";
     body.style.backgroundRepeat = "no-repeat";
     body.style.backgroundImage = "url('/img/bg.png')";
+    footer.style.display = "none";
 
     this.users.getSession().subscribe( (session) => {
       this.session = session;
@@ -33,6 +38,7 @@ export class LoginComponent implements OnInit {
   login() {
     this.users.logIn( this.email, this.password );
     this.emptyFields();
+    this.router.navigateByUrl('/');
   }
 
   register() {

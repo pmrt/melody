@@ -1,5 +1,9 @@
 # Melody
 
+## Demo
+
+You can see the demo at: http://mrtz.es/melody
+
 Music shop demo. Server side is written in PHP, which is a RESTful API using laravel framework
 client side is written in javacript using Angular 2.
 

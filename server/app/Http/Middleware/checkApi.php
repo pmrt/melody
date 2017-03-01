@@ -16,7 +16,7 @@ class CheckApi
     public function handle($request, Closure $next)
     {
         $key = $request->key;
-        if ($key != "UH6v4wp33xeeh1XWiRNo" || !isset($key) ) {
+        if ($key != "rtLuS79YSKM5VgaD" || !isset($key) ) {
             return response()->json([
                 "response" => "error",
                 "description" => "Invalid api key"

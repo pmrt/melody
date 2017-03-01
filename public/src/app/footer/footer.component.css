@@ -1,0 +1,14 @@
+span {
+  color: #ff7878;
+}
+
+footer {
+  margin: 20px 0px;
+  text-align: center;
+}
+
+footer a {
+  font-size: 11px;
+  text-transform: uppercase;
+  font-family: Raleway;
+}

@@ -52,3 +52,7 @@ body {
   left: 30vh;
   right: 30vh;
 }
+
+.saving {
+  color: rgb(255, 120, 120);
+}

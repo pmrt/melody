@@ -27,6 +27,8 @@ export class AdminComponent implements OnInit {
   constructor(private users: UsersService, private ps: ProductService) {
     let body = document.body;
     body.style.backgroundImage = "";
+    let footer = document.getElementsByTagName('footer')[0];
+    footer.style.display = "none";
 
     this.refreshProducts();
     this.refreshUsers();
